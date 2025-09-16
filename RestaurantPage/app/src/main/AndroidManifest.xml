@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantPage">
         <activity
+            android:name=".StartersActivity"
+            android:exported="false"
+            android:label="Starters"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MainDishesActivity"
+            android:exported="false"
+            android:label="Main dishes"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
