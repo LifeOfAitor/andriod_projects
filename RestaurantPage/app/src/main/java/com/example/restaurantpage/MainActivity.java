@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     CardView startersCard;
     CardView mainsCard;
+    CardView dessertsCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         // referenciar los elementos de main y side dishes
         startersCard = findViewById(R.id.card_view_starters);
         mainsCard = findViewById(R.id.card_view_mainDishes);
+        dessertsCard = findViewById(R.id.card_view_desserts);
 
+        //para linkar a la ventana de starters
         startersCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startersActivityIntent);
             }
         });
+
+        //para linkar a la ventana de main dishes
         mainsCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mainsActivityIntent);
             }
         });
-
+        //para linkar a la ventana de desserts
+        dessertsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dessertsActivityIntent = new Intent(MainActivity.this, DessertsActivity.class);
+                startActivity(dessertsActivityIntent);
+            }
+        });
+        // funcion del email (evento e intend)
         TextView emailView = findViewById(R.id.text_view_email);
         emailView.setOnClickListener(new View.OnClickListener() {
             @Override
