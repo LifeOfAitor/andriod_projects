@@ -2,6 +2,7 @@ package com.example.promoapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.promoapp.databinding.ActivityMainBinding
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             onPreviewClicked()
         }
 
+        //añadir valores al spinner mediante el adapter
+        val spinnerValues = arrayOf("","Android Developer", "Android Engineer")
+        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerValues)
+        binding.spinnerTitle.adapter = spinnerAdapter
     }
 
     private fun onPreviewClicked() {
