@@ -1,5 +1,6 @@
 package com.example.promoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
@@ -30,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onPreviewClicked() {
-        val testString =
-            binding.editTextName.text.toString() + " , " + binding.editTextNumber.text.toString()
-        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
+        val previewActivityIntent = Intent(this, PreviewActivity::class.java)
+        startActivity(previewActivityIntent)
+
     }
 }
