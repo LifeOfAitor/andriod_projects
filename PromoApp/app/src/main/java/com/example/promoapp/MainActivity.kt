@@ -2,17 +2,9 @@ package com.example.promoapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.Spinner
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.promoapp.databinding.ActivityMainBinding
-import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun onPreviewClicked() {
         val previewActivityIntent = Intent(this, PreviewActivity::class.java)
+        previewActivityIntent.putExtra("Contact Name", binding.editTextName.text.toString())
+        previewActivityIntent.putExtra("Contact Number", binding.editTextNumber.text.toString())
+        previewActivityIntent.putExtra("My display Name", binding.editTextDisplayName.text.toString())
+        previewActivityIntent.putExtra("Include Junior", binding.checkBoxJunior.isChecked)
+        previewActivityIntent.putExtra("Job title", binding.spinnerTitle?.selectedItem.toString())
+        previewActivityIntent.putExtra("Immediate start", binding.checkBoxImmediateStart.isChecked)
+        previewActivityIntent.putExtra("Start date", binding.editTextAvailability.text.toString())
         startActivity(previewActivityIntent)
 
     }
