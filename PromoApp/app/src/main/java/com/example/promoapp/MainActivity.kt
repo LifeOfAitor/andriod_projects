@@ -1,6 +1,7 @@
 package com.example.promoapp
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Spinner
@@ -9,9 +10,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.promoapp.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     // creamos las variables para cada elemento de la activity_main
     private var contactNameEditText: TextInputEditText? = null
@@ -25,19 +29,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //inicializamos aqui las variables de arriba
 
-        contactNameEditText = findViewById(R.id.edit_text_name)
-        contactNumberEditText = findViewById(R.id.edit_text_number)
-        myDisplayNameEditText = findViewById(R.id.edit_text_display_name)
-        startDateEditText = findViewById(R.id.edit_text_availability)
-        juniorCheckBox = findViewById(R.id.check_box_junior)
-        immediateStartCheckBox = findViewById(R.id.check_box_immediate_start)
-        jobTitleSpinner = findViewById(R.id.spinner_title)
+        contactNameEditText = binding.editTextName
+        contactNumberEditText = binding.editTextNumber
+        myDisplayNameEditText = binding.editTextDisplayName
+        startDateEditText = binding.editTextAvailability
+        juniorCheckBox = binding.checkBoxJunior
+        immediateStartCheckBox = binding.checkBoxJunior
+        jobTitleSpinner = binding.spinnerTitle
 
-        val previewButton: Button = findViewById(R.id.button_preview)
+        val previewButton: Button = binding.buttonPreview
         previewButton.setOnClickListener {
             //Toast.makeText(this, "Boton funciona", Toast.LENGTH_LONG).show()
             onPreviewClicked()
@@ -45,11 +50,9 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun onPreviewClicked(){
-        /*
-        val textEditName: TextInputEditText = findViewById(R.id.edit_text_name)
-        val textEditNumber: TextInputEditText = findViewById(R.id.edit_text_number)
+        val textEditName: TextInputEditText = binding.editTextName
+        val textEditNumber: TextInputEditText = binding.editTextNumber
         val testString = textEditName.text.toString() + " , " + textEditNumber.text.toString()
         Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
-         */
     }
 }
