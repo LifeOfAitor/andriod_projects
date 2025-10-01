@@ -22,20 +22,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         //añadir valores al spinner mediante el adapter
-        val spinnerValues = arrayOf("","Android Developer", "Android Engineer")
+        val spinnerValues = arrayOf("", "Android Developer", "Android Engineer")
         val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerValues)
         binding.spinnerTitle.adapter = spinnerAdapter
     }
 
     private fun onPreviewClicked() {
+        val message = Message(
+            binding.editTextName.text.toString(),
+            binding.editTextNumber.text.toString(),
+            binding.editTextDisplayName.text.toString(),
+            binding.checkBoxJunior.isChecked,
+            binding.spinnerTitle?.selectedItem.toString(),
+            binding.checkBoxImmediateStart.isChecked,
+            binding.editTextAvailability.text.toString()
+        )
         val previewActivityIntent = Intent(this, PreviewActivity::class.java)
-        previewActivityIntent.putExtra("Contact Name", binding.editTextName.text.toString())
-        previewActivityIntent.putExtra("Contact Number", binding.editTextNumber.text.toString())
-        previewActivityIntent.putExtra("My display Name", binding.editTextDisplayName.text.toString())
-        previewActivityIntent.putExtra("Include Junior", binding.checkBoxJunior.isChecked)
-        previewActivityIntent.putExtra("Job title", binding.spinnerTitle?.selectedItem.toString())
-        previewActivityIntent.putExtra("Immediate start", binding.checkBoxImmediateStart.isChecked)
-        previewActivityIntent.putExtra("Start date", binding.editTextAvailability.text.toString())
+        previewActivityIntent.putExtra("Message", message)
         startActivity(previewActivityIntent)
 
     }

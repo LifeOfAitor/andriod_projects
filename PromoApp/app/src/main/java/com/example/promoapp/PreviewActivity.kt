@@ -16,15 +16,8 @@ class PreviewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //recolectar las variables que hemos creado en el main a traves del intent
-        val jobName = intent.getStringExtra("Contact Name")
-        val contactNumber = intent.getStringExtra("Contact Number")
-        val displayName = intent.getStringExtra("My display Name")
-        val displayJunior = intent.getBooleanExtra("Include Junior", false)
-        val jobTitle = intent.getStringExtra("Job title")
-        val immediateStart = intent.getBooleanExtra("Immediate start", false)
-        val startDate = intent.getStringExtra("Start date")
+        val message = intent.getParcelableExtra("Message", Message::class.java)
 
-        binding.textViewMessage.text = "Contact name: $jobName Contact Number: $contactNumber Display name: $displayName Is junior: $displayJunior Job title: $jobTitle Immediate start: $immediateStart Starting date: $startDate"
+        binding.textViewMessage.text = message.toString()
     }
-
 }
