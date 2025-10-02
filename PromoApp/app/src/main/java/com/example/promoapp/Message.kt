@@ -1,6 +1,5 @@
 package com.example.promoapp
-
-import android.os.Parcelable
+import java.io.Serializable
 
 data class Message (
     val contactName: String,
@@ -10,4 +9,4 @@ data class Message (
     val jobTitle: String?,
     val immediateStart: Boolean,
     val startDate: String
-) : Parcelable
+) : Serializable
