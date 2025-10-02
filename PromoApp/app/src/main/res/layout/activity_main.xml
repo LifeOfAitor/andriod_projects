@@ -13,7 +13,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter name">
+            android:hint="@string/hint_enter_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_name"
@@ -26,7 +26,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contact number">
+            android:hint="@string/hint_contact_number">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_number"
@@ -40,7 +40,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter display name">
+            android:hint="@string/hint_enter_display_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_display_name"
@@ -56,7 +56,7 @@
             android:id="@+id/check_box_junior"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Include Junior" />
+            android:text="@string/hint_include_junior" />
 
         <Spinner
             android:id="@+id/spinner_title"
@@ -70,12 +70,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Immediate start" />
+            android:text="@string/hint_immediate_start" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Available from date">
+            android:hint="@string/hint_available_from_date">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_availability"
@@ -91,7 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Preview message" />
+            android:text="@string/hint_preview_message" />
 
     </LinearLayout>
 

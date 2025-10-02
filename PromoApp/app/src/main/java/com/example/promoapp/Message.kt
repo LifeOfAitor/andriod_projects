@@ -1,7 +1,8 @@
 package com.example.promoapp
+
 import java.io.Serializable
 
-data class Message (
+data class Message(
     val contactName: String,
     val contactNumber: String,
     val myDisplayName: String,
@@ -9,4 +10,7 @@ data class Message (
     val jobTitle: String?,
     val immediateStart: Boolean,
     val startDate: String
-) : Serializable
+) : Serializable {
+    fun getFullJobDescription() = if (includeJunior) "a Junior $jobTitle" else "an $jobTitle"
+    fun getAvailability() = if (immediateStart) "immediately" else "from $startDate"
+}

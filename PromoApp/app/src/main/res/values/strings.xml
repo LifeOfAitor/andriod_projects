@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PromoApp</string>
+    <string name="hint_enter_name">Enter name</string>
+    <string name="hint_contact_number">Contact number</string>
+    <string name="hint_enter_display_name">Enter display name</string>
+    <string name="hint_include_junior">Include Junior</string>
+    <string name="hint_immediate_start">Immediate start</string>
+    <string name="hint_available_from_date">Available from date</string>
+    <string name="hint_preview_message">Preview message</string>
+    <string name="hint_send_message">Send message</string>
 </resources>
