@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     android:padding="36dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Summary of registration:"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Mr example"
-        android:id="@+id/text_view_title_name_second"/>
+        <!-- Section Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Summary of registration"
+            android:textSize="22sp"
+            android:layout_marginBottom="24dp"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="example@example.com"
-        android:id="@+id/text_view_email"/>
+        <!-- Name -->
+        <TextView
+            android:id="@+id/text_view_title_name_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mr example"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="666-666-666"
-        android:id="@+id/text_view_phone"/>
+        <!-- Email -->
+        <TextView
+            android:id="@+id/text_view_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="example@example.com"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="123456"
-        android:id="@+id/text_view_password"/>
+        <!-- Phone -->
+        <TextView
+            android:id="@+id/text_view_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="666-666-666"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
 
-</LinearLayout>
+        <!-- Password -->
+        <TextView
+            android:id="@+id/text_view_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="••••••"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>

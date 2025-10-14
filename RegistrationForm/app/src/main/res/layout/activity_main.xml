@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,17 +15,24 @@
             android:id="@+id/text_view_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register" />
+            android:text="Register"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
 
         <Spinner
             android:id="@+id/spinner_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@android:layout/simple_expandable_list_item_1" />
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#FFFFFF"
+            android:popupBackground="#FFFFFF"
+            android:theme="@style/SpinnerTheme" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_first_name"
@@ -34,8 +42,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_input_last_name"
@@ -47,8 +57,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_input_email"
@@ -58,8 +70,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_input_phone"
@@ -69,8 +83,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_input_password"
@@ -83,7 +99,8 @@
             android:id="@+id/button_create"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CREATE ACCOUNT"/>
+            android:layout_marginTop="48dp"
+            android:text="CREATE ACCOUNT" />
 
 
     </LinearLayout>
