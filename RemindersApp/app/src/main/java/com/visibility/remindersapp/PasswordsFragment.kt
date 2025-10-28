@@ -11,9 +11,15 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.visibility.remindersapp.databinding.DialogEditReminderBinding
 import com.visibility.remindersapp.databinding.FragmentPasswordsBinding
 
-class PasswordsFragment: Fragment() {
+class PasswordsFragment : Fragment() {
     private lateinit var binding: FragmentPasswordsBinding
-    private val preferences by lazy {requireActivity().getSharedPreferences("passwords", Context.MODE_PRIVATE)}
+    private val preferences by lazy {
+        requireActivity().getSharedPreferences(
+            "passwords",
+            Context.MODE_PRIVATE
+        )
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -26,9 +32,9 @@ class PasswordsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         displayValues()
-        binding.cardViewWifi.setOnClickListener{showEditDialog(PREF_WIFI)}
-        binding.cardViewTablet.setOnClickListener{showEditDialog(PREF_TABLET)}
-        binding.cardViewBike.setOnClickListener{showEditDialog(PREF_BIKE)}
+        binding.cardViewWifi.setOnClickListener { showEditDialog(PREF_WIFI) }
+        binding.cardViewTablet.setOnClickListener { showEditDialog(PREF_TABLET) }
+        binding.cardViewBike.setOnClickListener { showEditDialog(PREF_BIKE) }
     }
 
     private fun displayValues() {
@@ -37,20 +43,26 @@ class PasswordsFragment: Fragment() {
         binding.textViewBikeValue.text = preferences.getString(PREF_BIKE, null)
     }
 
-    private fun showEditDialog(preferenceKey: String){
+    private fun showEditDialog(preferenceKey: String) {
         val dialogBinding = DialogEditReminderBinding.inflate(requireActivity().layoutInflater)
         dialogBinding.editTextValue.setText(preferences.getString(preferenceKey, null))
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Update value")
             .setView(dialogBinding.root)
-            .setPositiveButton("Save") {_,_ ->
-                preferences.edit { putString(preferenceKey, dialogBinding.editTextValue.text.toString()) }
+            .setPositiveButton("Save") { _, _ ->
+                preferences.edit {
+                    putString(
+                        preferenceKey,
+                        dialogBinding.editTextValue.text.toString()
+                    )
+                }
                 displayValues()
             }
-            .setNegativeButton("Cancel") {_,_ ->
+            .setNegativeButton("Cancel") { _, _ ->
 
             }.show()
     }
+
     companion object {
         const val PREF_WIFI = "pref_wifi"
         const val PREF_TABLET = "pref_tablet"
